@@ -65,6 +65,7 @@
         make.top.equalTo(_iconView.mas_bottom).with.offset(10);
     }];
     _contentLabel.font = [UIFont systemFontOfSize:11];
+    
     [_pictureView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
         make.width.equalTo(@(80));
@@ -93,7 +94,7 @@
     }else {
         _pictureView.hidden = YES;
     }
-    //强制布局 下，这句代码非常重要不可缺少
+    //强制布局 下，这句代码非常重要不可缺少,在vc里面的估计高度里面设置一个大概的值就可以
     [self layoutIfNeeded];
     if (model.picture) {
         model.cellHeight = CGRectGetMaxY(_pictureView.frame) +10;
